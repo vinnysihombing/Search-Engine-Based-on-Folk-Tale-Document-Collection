@@ -1,0 +1,40 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+<div class="movie-card">
+    <div class="container" style="height: 800px;">
+        <div class="hero">
+            <div class="details">
+                <div class="title1">
+                    {% for keys, values in dict_judul.items %} {% if keys == id %}
+                    <h4>{{values}}</h4>
+                    {% endif %} {% endfor %}
+                </div>
+                <div class="title2">
+                    {% for keys, values in dict_daerah .items %} {% if keys == id %}
+                    <h3>{{values}}</h3>
+                    {% endif %} {% endfor %}
+                </div>
+            </div>
+            <!-- end details -->
+        </div>
+        <!-- end hero -->
+        <div class="description">
+            <div class="column1">
+            </div>
+            <!-- end column1 -->
+            <div class="column2">
+                {% for keys, values in dict_text.items %} {% if keys == id %}
+                <h5 style="color:black; width: 800px">{{values}}</h5>
+                {% endif %} {% endfor %}
+                <div class="avatars">
+                </div>
+                <!-- end avatars -->
+            </div>
+            <!-- end column2 -->
+        </div>
+        <!-- end description -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end movie-card -->
+
+{% endblock %}
